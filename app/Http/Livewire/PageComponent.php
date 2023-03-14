@@ -6,11 +6,13 @@ use App\Models\Page;
 use App\Models\Slug;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Collection;
 use Livewire\Component;
 
 class PageComponent extends Component
 {
-    public Page $page;
+    public ?string $title;
+    public Collection $nodes;
 
     public function mount(Slug $slug): void
     {
@@ -18,10 +20,13 @@ class PageComponent extends Component
             $slug = Slug::whereSlug('')->first(); // site's home page
         }
 
-        $this->page = match($slug->type) {
+        $page = match($slug->type) {
             Slug\Type::User => Page::find(User::getHomePageId($slug->user_id)),
             default => Page::find($slug->page_id),
         };
+
+        $this->title = $page->data['title'] ?? null;
+        $this->nodes = $page->nodes()->get();
     }
 
     public function render(): View

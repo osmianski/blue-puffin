@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Page;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Node;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Node>
@@ -16,8 +19,16 @@ class NodeFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            //
-        ];
+        return array_merge([
+            'type' => $type = fake()->optional(0.1)->randomElement(Node\Type::cases()),
+            'page_id' => Page::factory(),
+        ], match($type) {
+            Node\Type::Database => [
+                'owner_id' => User::factory(),
+            ],
+            default => [
+                'data->text' => fake()->paragraph,
+            ],
+        });
     }
 }
