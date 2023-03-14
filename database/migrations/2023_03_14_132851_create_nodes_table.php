@@ -16,8 +16,12 @@ return new class extends Migration
             $table->string('type', 20)->nullable();
             $table->string('slug')->nullable()->index();
             $table->foreignId('page_id')
-                ->nullable()
+                ->nullable() // NULL for user' s root database
                 ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('owner_id')
+                ->nullable() // non-NULL for databases
+                ->constrained('users')
                 ->cascadeOnDelete();
             $table->json('data')->nullable();
             $table->timestamps();

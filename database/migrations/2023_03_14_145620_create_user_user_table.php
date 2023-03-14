@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('user_user', function (Blueprint $table) {
             $table->id();
-            $table->string('type', 20)->nullable();
-            $table->string('slug')->nullable()->index(); // NULL for root page
-            $table->foreignId('owner_id')
+
+            $table->foreignId('organization_id')
                 ->constrained('users')
                 ->cascadeOnDelete();
-            $table->json('data')->nullable();
+
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('user_user');
     }
 };
