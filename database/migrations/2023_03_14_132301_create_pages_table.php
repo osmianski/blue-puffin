@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->nullable();
+            $table->string('type', 20)->nullable();
             $table->string('slug')->nullable()->index();
             $table->foreignId('owner_id')
                 ->constrained('users')

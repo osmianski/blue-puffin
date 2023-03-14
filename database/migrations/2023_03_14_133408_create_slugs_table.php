@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('slugs', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->nullable();
+            $table->string('type', 20)->nullable();
             $table->string('slug')->nullable()->unique();
             $table->foreignId('page_id')
                 ->nullable()
