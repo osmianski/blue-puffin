@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('slug')->nullable()->index();
             $table->foreignId('owner_id')
-                ->constrained('accounts')
+                ->constrained('users')
                 ->cascadeOnDelete();
             $table->json('data')->nullable();
             $table->timestamps();

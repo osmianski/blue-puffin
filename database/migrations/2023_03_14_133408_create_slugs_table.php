@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('slugs', function (Blueprint $table) {
             $table->id();
             $table->string('type')->nullable();
-            $table->string('slug')->nullable()->index();
+            $table->string('slug')->nullable()->unique();
             $table->foreignId('page_id')
                 ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->foreignId('account_id')
+            $table->foreignId('user_id')
                 ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
