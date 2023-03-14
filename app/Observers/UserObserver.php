@@ -19,12 +19,10 @@ class UserObserver
 
     public function created(User $user): void
     {
-        if ($user->slug !== null) {
-            $user->slug()->create([
-                'type' => Slug\Type::User,
-                'slug' => $user->slug,
-            ]);
-        }
+        $user->slug()->create([
+            'type' => Slug\Type::User,
+            'slug' => $user->slug,
+        ]);
 
         $database = Node::create([
             'type' => Node\Type::Database,

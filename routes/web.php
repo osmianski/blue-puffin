@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\PageComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', PageComponent::class);
+Route::get('{slug:slug}', PageComponent::class)
+    ->where('slug', '([A-Za-z0-9\-\/]+)');

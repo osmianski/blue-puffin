@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('type', 20)->nullable();
-            $table->string('slug')->nullable()->index(); // NULL for the admin organization
+            $table->string('slug')->index(); // '' for the admin organization
             $table->string('email')->nullable()->unique();
             $table->json('data')->nullable();
             $table->timestamps();
