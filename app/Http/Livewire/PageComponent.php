@@ -11,6 +11,7 @@ use Livewire\Component;
 class PageComponent extends Component
 {
     public Page $page;
+
     public function mount(Slug $slug): void
     {
         if (!$slug->id) {
