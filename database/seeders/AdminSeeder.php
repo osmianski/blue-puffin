@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
@@ -17,9 +18,9 @@ class AdminSeeder extends Seeder
         ]);
 
         $organization->users()->create([
-            'data->name' => 'Admin',
-            'email' => 'admin@example.com',
-            'data->password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'data->name' => env('ADMIN_NAME', 'Admin'),
+            'email' => env('ADMIN_EMAIL', 'admin@example.com'),
+            'data->password' => Hash::make(env('ADMIN_PASSWORD', 'secret')),
         ]);
     }
 }

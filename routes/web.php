@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Livewire\PageComponent;
+use App\Http\Livewire\LoginPage;
+use App\Http\Livewire\PagePage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', PageComponent::class);
-Route::get('{slug:slug}', PageComponent::class)
+Route::get('/login', LoginPage::class)
+    ->name('login');
+Route::get('/', PagePage::class);
+Route::get('{slug:slug}', PagePage::class)
     ->where('slug', '([A-Za-z0-9\-\/]+)');
