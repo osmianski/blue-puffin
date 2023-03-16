@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 
-class PagePage extends Component
+class ContentPage extends Component
 {
     public ?string $title;
     public Collection $nodes;
@@ -31,6 +31,6 @@ class PagePage extends Component
 
     public function render(): View
     {
-        return view('livewire.page-page');
+        return view('livewire.content-page');
     }
 }
