@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
         $organization->users()->create([
             'data->name' => env('ADMIN_NAME', 'Admin'),
             'email' => env('ADMIN_EMAIL', 'admin@example.com'),
-            'data->password' => Hash::make(env('ADMIN_PASSWORD', 'secret')),
+            'password' => Hash::make(env('ADMIN_PASSWORD', 'secret')),
         ]);
     }
 }
