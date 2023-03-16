@@ -10,7 +10,8 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^2.12"
+        "livewire/livewire": "^2.12",
+        "osmianski/laravel-heroicons": "@dev"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
@@ -66,5 +67,14 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "osmianski/laravel-heroicons": {
+            "type": "path",
+            "url": "packages/osmianski/laravel-heroicons",
+            "options": {
+                "symlink": true
+            }
+        }
+    }
 }
