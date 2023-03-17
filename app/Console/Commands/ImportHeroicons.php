@@ -70,9 +70,16 @@ class ImportHeroicons extends Command
         }
     }
 
-    protected function convertFile(string $src, string $dest): void
+    protected function convertFile(string $src, string $dest, bool $solid): void
     {
         $contents = file_get_contents($src);
+
+        if ($solid) {
+            $contents = preg_replace('/fill="[^"]+"/', 'fill="currentColor"', $contents);
+        }
+        else {
+            $contents = str_replace('<svg ', '<svg stroke="currentColor" ', $contents);
+        }
 
         $contents = str_replace('<svg ', '<svg {{ $attributes }} ', $contents);
 

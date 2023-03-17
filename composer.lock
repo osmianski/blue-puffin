@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ea9e60aaa7c876f6086f9ad4c49b3b7",
+    "content-hash": "bd6289ae569559d200f599cb19e8464a",
     "packages": [
         {
             "name": "brick/math",
@@ -2278,11 +2278,17 @@
         },
         {
             "name": "osmianski/laravel-heroicons",
-            "version": "0.1.x-dev",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/osmianski/laravel-heroicons.git",
+                "reference": "75b24bd06f2843661a6a1d62136121f73cc0d1a5"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/osmianski/laravel-heroicons",
-                "reference": "e88115b1aee3f76c5c9e47002cd192f744076225"
+                "type": "zip",
+                "url": "https://api.github.com/repos/osmianski/laravel-heroicons/zipball/75b24bd06f2843661a6a1d62136121f73cc0d1a5",
+                "reference": "75b24bd06f2843661a6a1d62136121f73cc0d1a5",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "~10"
@@ -2300,6 +2306,7 @@
                     "Osmianski\\Heroicons\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2312,14 +2319,15 @@
             ],
             "description": "Heroicons as Laravel Blade components",
             "keywords": [
-                "Blade",
                 "Heroicons",
-                "Laravel"
+                "blade",
+                "laravel"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/osmianski/laravel-heroicons/issues",
+                "source": "https://github.com/osmianski/laravel-heroicons/tree/v0.1.1"
+            },
+            "time": "2023-03-17T06:06:26+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9085,9 +9093,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "osmianski/laravel-heroicons": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
