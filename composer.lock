@@ -2278,16 +2278,16 @@
         },
         {
             "name": "osmianski/laravel-heroicons",
-            "version": "v0.1.1",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/osmianski/laravel-heroicons.git",
-                "reference": "75b24bd06f2843661a6a1d62136121f73cc0d1a5"
+                "reference": "92195a78a06e5b95ea0bc69c918d61c49e6b6543"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osmianski/laravel-heroicons/zipball/75b24bd06f2843661a6a1d62136121f73cc0d1a5",
-                "reference": "75b24bd06f2843661a6a1d62136121f73cc0d1a5",
+                "url": "https://api.github.com/repos/osmianski/laravel-heroicons/zipball/92195a78a06e5b95ea0bc69c918d61c49e6b6543",
+                "reference": "92195a78a06e5b95ea0bc69c918d61c49e6b6543",
                 "shasum": ""
             },
             "require": {
@@ -2325,9 +2325,9 @@
             ],
             "support": {
                 "issues": "https://github.com/osmianski/laravel-heroicons/issues",
-                "source": "https://github.com/osmianski/laravel-heroicons/tree/v0.1.1"
+                "source": "https://github.com/osmianski/laravel-heroicons/tree/v0.1.3"
             },
-            "time": "2023-03-17T06:06:26+00:00"
+            "time": "2023-03-17T13:25:45+00:00"
         },
         {
             "name": "phpoption/phpoption",
