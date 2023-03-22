@@ -10,6 +10,7 @@
 <body class="h-full">
     {{ $slot }}
 
+    @vite('resources/js/app.js')
     @livewireScripts
 </body>
 </html>

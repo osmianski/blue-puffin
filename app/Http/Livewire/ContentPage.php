@@ -9,8 +9,12 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 
+/**
+ * @property Page $page
+ */
 class ContentPage extends Component
 {
+    public int $pageId;
     public ?string $title;
     public Collection $nodes;
 
@@ -25,12 +29,20 @@ class ContentPage extends Component
             default => Page::find($slug->page_id),
         };
 
+        $this->pageId = $page->id;
         $this->title = $page->data['title'] ?? null;
         $this->nodes = $page->nodes()->get();
     }
 
+    public function getPageProperty(): Page
+    {
+        return Page::find($this->pageId);
+    }
+
     public function render(): View
     {
-        return view('livewire.content-page');
+        return view('livewire.content-page', [
+            'page' => $this->page,
+        ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Page;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
+use Osmianski\Helper\Exceptions\NotImplemented;
 
 class PagePolicy
 {
@@ -13,7 +14,7 @@ class PagePolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        throw new NotImplemented();
     }
 
     /**
@@ -21,7 +22,7 @@ class PagePolicy
      */
     public function view(User $user, Page $page): bool
     {
-        //
+        throw new NotImplemented();
     }
 
     /**
@@ -29,7 +30,7 @@ class PagePolicy
      */
     public function create(User $user): bool
     {
-        //
+        throw new NotImplemented();
     }
 
     /**
@@ -37,7 +38,7 @@ class PagePolicy
      */
     public function update(User $user, Page $page): bool
     {
-        //
+        return $page->owner_id === $user->id;
     }
 
     /**
@@ -45,7 +46,7 @@ class PagePolicy
      */
     public function delete(User $user, Page $page): bool
     {
-        //
+        throw new NotImplemented();
     }
 
     /**
@@ -53,7 +54,7 @@ class PagePolicy
      */
     public function restore(User $user, Page $page): bool
     {
-        //
+        throw new NotImplemented();
     }
 
     /**
@@ -61,6 +62,6 @@ class PagePolicy
      */
     public function forceDelete(User $user, Page $page): bool
     {
-        //
+        throw new NotImplemented();
     }
 }

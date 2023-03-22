@@ -25,3 +25,11 @@ Conceptually, it looks like follows:
 ![Concepts](docs/models.png)
 
 As a page owner you can edit it in-place. Other users can see your public pages (currently, all pages are public).  
+
+## Installation
+
+TODO
+
+```bash
+sail artisan migrate:fresh --seed
+```

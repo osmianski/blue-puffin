@@ -29,10 +29,11 @@ class UserObserver
             'owner_id' => $user->id,
         ]);
 
-        $page = Page::create([
+        $page = Page::create(array_filter([
             'owner_id' => $user->id,
             'database_id' => $database->id,
-        ]);
+            'data->title' => $user->data['name'] ?? null,
+        ]));
 
         Node::factory()->count(10)->create([
             'page_id' => $page->id,
